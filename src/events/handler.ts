@@ -1,11 +1,11 @@
-import { WikiBot } from "../bot";
+import { WikiBot } from '../bot'
 
 export abstract class EventHandler {
-  client: WikiBot;
+    client: WikiBot
 
-  constructor(client: WikiBot) {
-    this.client = client;
-  }
+    constructor(client: WikiBot) {
+        this.client = client
+    }
 
-  abstract handler(args: any[]): void;
+    abstract handler(args: any[]): void
 }

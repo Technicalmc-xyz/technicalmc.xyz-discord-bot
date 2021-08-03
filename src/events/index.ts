@@ -1,1 +1,1 @@
-export * from "./auto-role";
+export * from './auto-role'

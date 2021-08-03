@@ -1,5 +1,6 @@
 declare namespace NodeJS {
-  export interface ProcessEnv {
-    DISCORD_TOKEN: string;
-  }
+    export interface ProcessEnv {
+        DISCORD_TOKEN: string
+        GUILD_ID: string
+    }
 }
