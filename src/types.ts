@@ -48,3 +48,7 @@ export type Events =
     | 'voiceStateUpdate'
     | 'warn'
     | 'webhookUpdate'
+
+export interface CommandOptions {
+    helpMessage: string
+}
