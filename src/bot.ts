@@ -1,5 +1,11 @@
 import { SlashCommandBuilder } from '@discordjs/builders'
-import { Client, CommandInteraction, Intents, Interaction } from 'discord.js'
+import {
+    Client,
+    CommandInteraction,
+    Intents,
+    Interaction,
+    MessageEmbed,
+} from 'discord.js'
 import { dispatcher } from './dispatcher'
 
 export class WikiBot extends Client {
@@ -46,6 +52,17 @@ export class WikiBot extends Client {
     }
 
     async dispatchCommand(interaction: CommandInteraction) {
-        dispatcher.commands[interaction.commandName].run(interaction)
+        try {
+            dispatcher.commands[interaction.commandName].run(interaction)
+        } catch (err) {
+            interaction.reply({
+                embeds: [
+                    new MessageEmbed()
+                        .setColor('RED')
+                        .setTitle('Unfortunately, an error occured!')
+                        .setDescription('```\n' + err + '```'),
+                ],
+            })
+        }
     }
 }

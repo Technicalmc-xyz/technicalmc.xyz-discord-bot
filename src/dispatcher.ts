@@ -33,11 +33,12 @@ export const Event = (name: Events) => {
 export const Command = (name: string, options: CommandOptions) => {
     return (
         constructor: new (
+            name: string,
             client: WikiBot,
             options: CommandOptions
         ) => CommandHandler
     ) => {
-        const handler = new constructor(instance, options)
+        const handler = new constructor(name, instance, options)
         dispatcher.registerCommand(name, handler)
     }
 }

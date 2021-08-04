@@ -5,10 +5,12 @@ import { CommandOptions } from '../types'
 
 export abstract class CommandHandler {
     client: WikiBot
+    name: string
     options: CommandOptions
 
-    constructor(client: WikiBot, options: CommandOptions) {
+    constructor(name: string, client: WikiBot, options: CommandOptions) {
         this.client = client
+        this.name = name
         this.options = options
     }
 
