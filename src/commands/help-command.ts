@@ -1,6 +1,6 @@
 import { SlashCommandBuilder } from '@discordjs/builders'
 import { CommandInteraction, MessageEmbed } from 'discord.js'
-import { Command, dispatcher } from '../dispatcher'
+import { Command } from '../dispatcher'
 import { CommandHandler } from './handler'
 
 @Command('help', { helpMessage: 'Shows this message!' })
@@ -21,10 +21,10 @@ export class HelpCommand extends CommandHandler {
         let commands
         const command = interaction.options.getString('command')
 
-        if (command == null) commands = Object.values(dispatcher.commands)
-        else if (dispatcher.commands[command] === undefined)
+        if (command == null) commands = Object.values(this.client.commands)
+        else if (this.client.commands[command] === undefined)
             throw new Error(`No command found with name: ${command}`)
-        else commands = [dispatcher.commands[command]]
+        else commands = [this.client.commands[command]]
 
         const embed = new MessageEmbed().setColor('#56ad56').setTitle('Help')
 

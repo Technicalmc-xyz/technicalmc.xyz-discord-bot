@@ -5,13 +5,15 @@
 If you would like to start developing this bot on your own local
 test server here is how to get setup.
 
+**NODE.JS version 14.16.0 is required**
+
 First install the dependices
 
 ```
 npm i
 ```
 
-Create a .env file with your discord token
+Create a .env file with your discord token and guild ID
 
 ```
 cp .env.example .env
