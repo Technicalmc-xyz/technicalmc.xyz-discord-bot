@@ -13,7 +13,7 @@ First install the dependices
 npm i
 ```
 
-Create a .env file with your discord token
+Create a .env file with your discord token and guild ID
 
 ```
 cp .env.example .env
