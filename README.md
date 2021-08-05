@@ -5,6 +5,8 @@
 If you would like to start developing this bot on your own local
 test server here is how to get setup.
 
+**NODE.JS version 14.16.0 is required**
+
 First install the dependices
 
 ```
