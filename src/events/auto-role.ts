@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { GuildMember } from 'discord.js'
-import { event } from '../dispatcher'
+import { Event } from '../dispatcher'
 import { EventHandler } from './handler'
 import ROLE_MAPPING from './roles-config'
 
@@ -14,7 +14,7 @@ interface WikiUser {
 
 type WikiUserResponse = WikiUser & { message: string }
 
-@event('guildMemberAdd')
+@Event('guildMemberAdd')
 export class AutoRole extends EventHandler {
     async handler([member]: [GuildMember]) {
         const user = await this.fetchWikiUser(member.id)
